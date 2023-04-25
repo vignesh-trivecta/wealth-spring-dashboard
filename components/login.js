@@ -1,0 +1,191 @@
+import React from "react";
+import Head from "next/head";
+import jwt  from "jsonwebtoken";
+// import CryptoJS from "crypto-js";
+import ReCAPTCHA from "react-google-recaptcha";
+import { setLoggedIn } from "@/store/authSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { useRouter } from "next/router";
+import { setPassword, setUser } from "@/store/userSlice";
+
+
+const LoginAuth = () => {
+
+    // declaring state variables
+    const user = useSelector((state) => state.user.user);
+    const password = useSelector((state) => state.user.password);
+
+    const router = useRouter();
+    const dispatch = useDispatch();
+  
+    // const iv = CryptoJS.enc.Hex.parse("26463b878c7e8239e01aa17b21d8228e");
+
+    // function to encrypt the username and password using CryptoJS
+    // function encryptedCredentials(user, password, SECRET_KEY) {
+    //     const encryptedUser = CryptoJS.AES.encrypt(user, SECRET_KEY, { iv: iv }).toString();
+    //     const encryptedPassword = CryptoJS.AES.encrypt(password, SECRET_KEY, { iv: iv }).toString();    
+    //     return {encryptedUser, encryptedPassword};
+    // }
+
+    // onsubmit function 
+    const submitLogin = (e) => {
+        e.preventDefault();
+        
+        // signing the username, password with secret key
+        // using jwt to create a authentication token
+        // const { encryptedUser, encryptedPassword } = encryptedCredentials(user, password, process.env.SECRET_KEY);
+        const token = jwt.sign({user, password}, process.env.SECRET_KEY);
+        // dispatch(setLoggedIn(true));
+        // router.push('../admin/dashboard');
+        
+        if(user == 'admin12' && password == 'admin12'){
+          dispatch(setLoggedIn(true));
+          router.push('/admin/dashboard');
+          // router.push('/admin/');
+        }
+
+        // posting the authorized token to backend,
+        // based on the received respone 200 or 404 
+        // redirecting user to next page
+        fetch("http://localhost:8082/adminlogin", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Authorization": `Bearer ${token}`
+            },
+            // body: token,
+        })
+        .then(response => {
+            if (response.status === 200) {
+            // authentication successful
+            // redirect user to dashboard or home page
+
+            // console.log(response.status);
+            dispatch(setLoggedIn(true));
+            router.push('/admin');
+            } 
+            else {
+            // authentication failed
+            // display error message to user
+
+            // console.log(response.status);
+            alert("Invalid credentials");
+            }
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
+    };
+
+    function resetInput(e) {
+        e.preventDefault();
+        dispatch(setUser(''));
+        dispatch(setPassword(''));
+    }
+
+    const onReCAPTCHAChange = (captchaCode) => {
+        // If the reCAPTCHA code is null or undefined indicating that
+        // the reCAPTCHA was expired then return early
+        if(!captchaCode) {
+          return;
+        }
+        // Else reCAPTCHA was executed successfully so proceed with the 
+        // alert
+        // alert(`Hey, ${email}`);
+        // Reset the reCAPTCHA so that it can be executed again if user 
+        // submits another email.
+        // recaptchaRef.current.reset();
+      }
+
+    return (
+      <div className="container">
+        {/* Page Name */}
+        <Head>
+          <title>Wealth Spring | Admin Login</title>
+          <meta
+            property="og:title"
+            content="Wealth Spring | Admin Login"
+            key="title"
+          />
+        </Head>
+
+        {/* Login page */}
+        <div className="d-flex justify-content-center align-items-center">
+          <form className="border border-dark rounded p-5">
+            <h3 className="text-center fw-bold mb-4">Login to Wealth Spring</h3>
+            <div className="mb-3">
+              <label
+                htmlFor="exampleInputEmail1"
+                className="form-label fs-5 fw-semibold"
+              >
+                Username
+              </label>
+              <div className="input-group flex-nowrap">
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Enter username"
+                  onChange={(e) => dispatch(setUser(e.target.value))}
+                  value={user}
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                  sx={{ width: "50px" }}
+                />
+                <span className="input-group-text" id="addon-wrapping">
+                  <i className="bi bi-person-circle"></i>
+                </span>
+              </div>
+            </div>
+            <div className="mb-3">
+              <label
+                htmlFor="exampleInputPassword1"
+                className="form-label fs-5 fw-semibold"
+              >
+                Password
+              </label>
+              <div className="input-group flex-nowrap">
+                <input
+                  className="form-control"
+                  placeholder="Enter password"
+                  type="password"
+                  onChange={(e) => dispatch(setPassword(e.target.value))}
+                  value={password}
+                  id="exampleInputPassword1"
+                />
+                <span className="input-group-text" id="addon-wrapping">
+                  <i className="bi bi-eye-slash-fill"></i>
+                </span>
+              </div>
+            </div>
+            <div className="d-flex">
+              <ReCAPTCHA
+                ref={ReCAPTCHA}
+                size="normal"
+                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                onChange={onReCAPTCHAChange}
+              />
+            </div>
+            <a href="#">Forgot your password?</a>
+            <div className="row mt-3">
+              <button
+                className="col btn btn-success btn-lg m-2"
+                type="submit"
+                onClick={submitLogin}
+              >
+                Login
+              </button>
+              <button
+                className="col btn btn-outline-danger btn-lg m-2"
+                type="submit"
+                onClick={resetInput}
+              >
+                Reset
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    );
+}
+
+export default LoginAuth;
