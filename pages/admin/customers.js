@@ -5,7 +5,9 @@ const Customers = () => {
     return(
         <div>
             <Layout>
-                <CustomerDetails />
+                <div style={{height: '80vh'}}>
+                    <CustomerDetails />
+                </div>
             </Layout>
         </div>
     )

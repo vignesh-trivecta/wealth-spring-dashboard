@@ -4,7 +4,9 @@ import CreateBasket from "@/components/admin/createBasket";
 const Basket = () => {
     return(
         <Layout>
-            <CreateBasket/>
+            <div style={{height: '80vh'}}> 
+                <CreateBasket/>
+            </div>
         </Layout>
     )
 }

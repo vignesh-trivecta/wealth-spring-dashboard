@@ -38,7 +38,7 @@ const CreateBasket = () => {
       {/* Orders Row */}
       
       {/* Orders Table */}
-      <div>
+      <div style={{overflowY: 'auto', height: '70vh'}}>
         <table className="table table-hover table-bordered border-dark fs-6">
           <thead>
             <tr>
@@ -289,6 +289,300 @@ const CreateBasket = () => {
               <td>2324.65</td>
               <td>6</td>
               <td>13947.9</td>
+            </tr>
+
+            {/* table 7 */}
+            <tr>
+            <th scope="row">7</th>
+              <td>
+                <div>
+                  <select defaultValue={'7'} className="form-select w-75 fs-6">
+                    <option value="1">Asian Paints Ltd</option>
+                    <option value="2">Reliance Industries Ltd</option>
+                    <option value="3">La Opala RG Ltd</option>
+                    <option value="4">Reddington India Ltd</option>
+                    <option value="5">Indigo Paints</option>
+                    <option value="6">Akzo Nobel</option>
+                    <option value="7">BPL limited</option>
+                  </select>
+                </div>
+              </td>
+              <td>
+                <div>
+                    <select className="form-select w-75 fs-6">
+                      <option value="1">BSE</option>
+                      <option value="2">NSE</option>
+                    </select>
+                </div>
+              </td>
+              <td>
+                <div>
+                    <select className="form-select w-75 fs-6">
+                      <option value="1">Buy</option>
+                      <option value="2">Sell</option>
+                    </select>
+                </div>
+              </td>
+              <td>
+                <div>
+                <input type="text" className="form-control w-75" />  
+                </div>
+              </td>
+              <td>59.70</td>
+              <td>24</td>
+              <td>1432.8</td>
+            </tr>
+
+            {/* table 7 */}
+            <tr>
+            <th scope="row">7</th>
+              <td>
+                <div>
+                  <select defaultValue={'7'} className="form-select w-75 fs-6">
+                    <option value="1">Asian Paints Ltd</option>
+                    <option value="2">Reliance Industries Ltd</option>
+                    <option value="3">La Opala RG Ltd</option>
+                    <option value="4">Reddington India Ltd</option>
+                    <option value="5">Indigo Paints</option>
+                    <option value="6">Akzo Nobel</option>
+                    <option value="7">BPL limited</option>
+                  </select>
+                </div>
+              </td>
+              <td>
+                <div>
+                    <select className="form-select w-75 fs-6">
+                      <option value="1">BSE</option>
+                      <option value="2">NSE</option>
+                    </select>
+                </div>
+              </td>
+              <td>
+                <div>
+                    <select className="form-select w-75 fs-6">
+                      <option value="1">Buy</option>
+                      <option value="2">Sell</option>
+                    </select>
+                </div>
+              </td>
+              <td>
+                <div>
+                <input type="text" className="form-control w-75" />  
+                </div>
+              </td>
+              <td>59.70</td>
+              <td>24</td>
+              <td>1432.8</td>
+            </tr>
+
+            {/* table 7 */}
+            <tr>
+            <th scope="row">7</th>
+              <td>
+                <div>
+                  <select defaultValue={'7'} className="form-select w-75 fs-6">
+                    <option value="1">Asian Paints Ltd</option>
+                    <option value="2">Reliance Industries Ltd</option>
+                    <option value="3">La Opala RG Ltd</option>
+                    <option value="4">Reddington India Ltd</option>
+                    <option value="5">Indigo Paints</option>
+                    <option value="6">Akzo Nobel</option>
+                    <option value="7">BPL limited</option>
+                  </select>
+                </div>
+              </td>
+              <td>
+                <div>
+                    <select className="form-select w-75 fs-6">
+                      <option value="1">BSE</option>
+                      <option value="2">NSE</option>
+                    </select>
+                </div>
+              </td>
+              <td>
+                <div>
+                    <select className="form-select w-75 fs-6">
+                      <option value="1">Buy</option>
+                      <option value="2">Sell</option>
+                    </select>
+                </div>
+              </td>
+              <td>
+                <div>
+                <input type="text" className="form-control w-75" />  
+                </div>
+              </td>
+              <td>59.70</td>
+              <td>24</td>
+              <td>1432.8</td>
+            </tr>
+
+            {/* table 7 */}
+            <tr>
+            <th scope="row">7</th>
+              <td>
+                <div>
+                  <select defaultValue={'7'} className="form-select w-75 fs-6">
+                    <option value="1">Asian Paints Ltd</option>
+                    <option value="2">Reliance Industries Ltd</option>
+                    <option value="3">La Opala RG Ltd</option>
+                    <option value="4">Reddington India Ltd</option>
+                    <option value="5">Indigo Paints</option>
+                    <option value="6">Akzo Nobel</option>
+                    <option value="7">BPL limited</option>
+                  </select>
+                </div>
+              </td>
+              <td>
+                <div>
+                    <select className="form-select w-75 fs-6">
+                      <option value="1">BSE</option>
+                      <option value="2">NSE</option>
+                    </select>
+                </div>
+              </td>
+              <td>
+                <div>
+                    <select className="form-select w-75 fs-6">
+                      <option value="1">Buy</option>
+                      <option value="2">Sell</option>
+                    </select>
+                </div>
+              </td>
+              <td>
+                <div>
+                <input type="text" className="form-control w-75" />  
+                </div>
+              </td>
+              <td>59.70</td>
+              <td>24</td>
+              <td>1432.8</td>
+            </tr>
+
+            {/* table 7 */}
+            <tr>
+            <th scope="row">7</th>
+              <td>
+                <div>
+                  <select defaultValue={'7'} className="form-select w-75 fs-6">
+                    <option value="1">Asian Paints Ltd</option>
+                    <option value="2">Reliance Industries Ltd</option>
+                    <option value="3">La Opala RG Ltd</option>
+                    <option value="4">Reddington India Ltd</option>
+                    <option value="5">Indigo Paints</option>
+                    <option value="6">Akzo Nobel</option>
+                    <option value="7">BPL limited</option>
+                  </select>
+                </div>
+              </td>
+              <td>
+                <div>
+                    <select className="form-select w-75 fs-6">
+                      <option value="1">BSE</option>
+                      <option value="2">NSE</option>
+                    </select>
+                </div>
+              </td>
+              <td>
+                <div>
+                    <select className="form-select w-75 fs-6">
+                      <option value="1">Buy</option>
+                      <option value="2">Sell</option>
+                    </select>
+                </div>
+              </td>
+              <td>
+                <div>
+                <input type="text" className="form-control w-75" />  
+                </div>
+              </td>
+              <td>59.70</td>
+              <td>24</td>
+              <td>1432.8</td>
+            </tr>
+
+            {/* table 7 */}
+            <tr>
+            <th scope="row">7</th>
+              <td>
+                <div>
+                  <select defaultValue={'7'} className="form-select w-75 fs-6">
+                    <option value="1">Asian Paints Ltd</option>
+                    <option value="2">Reliance Industries Ltd</option>
+                    <option value="3">La Opala RG Ltd</option>
+                    <option value="4">Reddington India Ltd</option>
+                    <option value="5">Indigo Paints</option>
+                    <option value="6">Akzo Nobel</option>
+                    <option value="7">BPL limited</option>
+                  </select>
+                </div>
+              </td>
+              <td>
+                <div>
+                    <select className="form-select w-75 fs-6">
+                      <option value="1">BSE</option>
+                      <option value="2">NSE</option>
+                    </select>
+                </div>
+              </td>
+              <td>
+                <div>
+                    <select className="form-select w-75 fs-6">
+                      <option value="1">Buy</option>
+                      <option value="2">Sell</option>
+                    </select>
+                </div>
+              </td>
+              <td>
+                <div>
+                <input type="text" className="form-control w-75" />  
+                </div>
+              </td>
+              <td>59.70</td>
+              <td>24</td>
+              <td>1432.8</td>
+            </tr>
+
+            {/* table 7 */}
+            <tr>
+            <th scope="row">7</th>
+              <td>
+                <div>
+                  <select defaultValue={'7'} className="form-select w-75 fs-6">
+                    <option value="1">Asian Paints Ltd</option>
+                    <option value="2">Reliance Industries Ltd</option>
+                    <option value="3">La Opala RG Ltd</option>
+                    <option value="4">Reddington India Ltd</option>
+                    <option value="5">Indigo Paints</option>
+                    <option value="6">Akzo Nobel</option>
+                    <option value="7">BPL limited</option>
+                  </select>
+                </div>
+              </td>
+              <td>
+                <div>
+                    <select className="form-select w-75 fs-6">
+                      <option value="1">BSE</option>
+                      <option value="2">NSE</option>
+                    </select>
+                </div>
+              </td>
+              <td>
+                <div>
+                    <select className="form-select w-75 fs-6">
+                      <option value="1">Buy</option>
+                      <option value="2">Sell</option>
+                    </select>
+                </div>
+              </td>
+              <td>
+                <div>
+                <input type="text" className="form-control w-75" />  
+                </div>
+              </td>
+              <td>59.70</td>
+              <td>24</td>
+              <td>1432.8</td>
             </tr>
 
             {/* table 7 */}

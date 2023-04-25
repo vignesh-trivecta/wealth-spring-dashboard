@@ -26,10 +26,10 @@ const Sidebar = () => {
                             </h2>
                             <div id="flush-collapseOne" className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                                 <div className="accordion-body">
-                                    <Link className="px-3 nav-link" href='/admin/customers'>
+                                    <Link className="px-3 nav-link" href='/admin/basket'>
                                         <i className="bi bi-people"></i> Create Basket
                                     </Link>
-                                    <Link className="px-3 nav-link" href='/admin/customers'>
+                                    <Link className="px-3 nav-link" href='/admin/basket'>
                                         <i className="bi bi-people"></i> View Baskets
                                     </Link>
                                 </div>
